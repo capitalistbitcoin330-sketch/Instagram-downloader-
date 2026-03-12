@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Instagram Reel Downloader</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background: linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+background-size:400% 400%;
+animation:bg 10s infinite alternate;
+}
+
+@keyframes bg{
+0%{background-position:left}
+100%{background-position:right}
+}
+
+.container{
+
+background: rgba(255,255,255,0.15);
+backdrop-filter: blur(10px);
+padding:40px;
+width:380px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+text-align:center;
+color:white;
+
+}
+
+h1{
+font-weight:600;
+margin-bottom:10px;
+}
+
+p{
+font-size:14px;
+opacity:0.8;
+margin-bottom:25px;
+}
+
+input{
+
+width:100%;
+padding:14px;
+border:none;
+border-radius:8px;
+outline:none;
+margin-bottom:15px;
+font-size:14px;
+
+}
+
+button{
+
+width:100%;
+padding:14px;
+border:none;
+border-radius:8px;
+background:#ffffff;
+color:#333;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.05);
+background:#f1f1f1;
+
+}
+
+#result{
+
+margin-top:20px;
+
+}
+
+.download-btn{
+
+display:inline-block;
+margin-top:15px;
+padding:10px 20px;
+background:#00c853;
+color:white;
+text-decoration:none;
+border-radius:6px;
+
+}
+
+footer{
+
+margin-top:20px;
+font-size:12px;
+opacity:0.7;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Instagram Reel Downloader</h1>
+
+<p>Paste your Instagram Reel link below to download instantly</p>
+
+<input id="url" placeholder="Paste Instagram Reel URL here">
+
+<button onclick="downloadReel()">Download Reel</button>
+
+<div id="result"></div>
+
+<footer>
+Free Online Tool
+</footer>
+
+</div>
+
+<script>
+
+function downloadReel(){
+
+let url=document.getElementById("url").value;
+
+if(url==""){
+
+document.getElementById("result").innerHTML="Please paste reel URL";
+
+return;
+
+}
+
+document.getElementById("result").innerHTML=`
+<a class="download-btn" href="${url}" target="_blank">
+Click Here To Download
+</a>
+`;
+
+}
+
+</script>
+
+</body>
+</html>
